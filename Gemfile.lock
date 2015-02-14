@@ -1,0 +1,15 @@
+GIT
+  remote: git://github.com/travis-infrastructure/chirp.git
+  revision: bca55ed190a76e3ac1a35dd29aef5f57212826eb
+  specs:
+    chirp (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chirp!
