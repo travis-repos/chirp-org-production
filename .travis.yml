@@ -2,11 +2,11 @@ language: ruby
 sudo: false
 rvm: 2.3.1
 env:
+  matrix:
+  - QUEUE=docker DIST=precise
   global:
   - CHIRP_SUMMARY_OUTPUT="${TRAVIS_BUILD_DIR}/chirp.json"
   - CHIRP_TRACKER_STATS_URL="https://chirp-tracker-production.herokuapp.com/stats"
-  - DIST=precise
-  - QUEUE=docker
   - SITE=org
 addons: { apt: { packages: [bc] } }
 linux_shared: &linux_shared
