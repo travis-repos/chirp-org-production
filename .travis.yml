@@ -1,5 +1,5 @@
 language: ruby
-group: packet-bench02
+group: ec2-bench09
 sudo: false
 rvm: 2.3.1
 env:
