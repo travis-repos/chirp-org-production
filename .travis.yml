@@ -1,5 +1,5 @@
 language: ruby
-group: packet-bench07
+group: packet-bench08
 sudo: false
 rvm: 2.3.1
 env:
