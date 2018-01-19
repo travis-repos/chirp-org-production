@@ -41,6 +41,7 @@ script: bundle exec chirp scripts
 after_script: bundle exec chirp sendstats 2>/dev/null
 after_failure: bundle exec chirp dumplogs
 notifications:
+  email: false
   webhooks:
     urls:
     - 'https://chirp-tracker-production.herokuapp.com/travis'
