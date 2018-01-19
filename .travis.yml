@@ -37,6 +37,7 @@ matrix:
   #   rvm: default
   #   env: QUEUE=macstadium6 IMAGE=xcode7
   # }
+before_install: gem update --system
 script: bundle exec chirp scripts
 after_script: bundle exec chirp sendstats 2>/dev/null
 after_failure: bundle exec chirp dumplogs
