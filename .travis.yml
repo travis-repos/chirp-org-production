@@ -1,50 +1,28 @@
 language: ruby
-sudo: false
 rvm: 2.5.0
-env:
-  matrix:
-  - QUEUE=docker DIST=precise
-  global:
-  - CHIRP_SUMMARY_OUTPUT="${TRAVIS_BUILD_DIR}/chirp.json"
-  - CHIRP_TRACKER_STATS_URL="https://chirp-tracker-production.herokuapp.com/stats"
-  - SITE=org
-addons: { apt: { packages: [bc] } }
-linux_shared: &linux_shared
-  os: linux
-  addons: { apt: { packages: [bc] } }
-matrix:
-  include:
-  - sudo: required
-    dist: trusty
-    env: QUEUE=gce DIST=trusty
-    <<: *linux_shared
-  - sudo: required
-    dist: precise
-    env: QUEUE=gce DIST=precise
-    <<: *linux_shared
-  - sudo: false
-    dist: trusty
-    group: beta
-    env: QUEUE=ec2 DIST=trusty
-    <<: *linux_shared
-  # {
-  # NOTE: disabling macOS builds while working on datacenter migration.
-  # - os: osx
-  #   rvm: default
-  #   env: QUEUE=macstadium6 IMAGE=default
-  # - os: osx
-  #   osx_image: xcode7
-  #   rvm: default
-  #   env: QUEUE=macstadium6 IMAGE=xcode7
-  # }
+os: osx
+osx_image: xcode9.3-moar
 before_install: gem update --system
 script: bundle exec chirp scripts
-after_script: bundle exec chirp sendstats 2>/dev/null
-after_failure: bundle exec chirp dumplogs
-notifications:
-  email: false
-  webhooks:
-    urls:
-    - 'https://chirp-tracker-production.herokuapp.com/travis'
-    on_success: always
-    on_failure: never
+env:
+  matrix:
+  - I=00
+#  - I=01
+#  - I=02
+#  - I=03
+#  - I=04
+#  - I=05
+#  - I=06
+#  - I=07
+#  - I=08
+#  - I=09
+#  - I=10
+#  - I=11
+#  - I=12
+#  - I=13
+#  - I=14
+#  - I=15
+#  - I=16
+#  - I=17
+#  - I=18
+#  - I=19
