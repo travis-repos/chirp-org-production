@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.5.0' if ENV.key?('DYNO')
+ruby '2.5.1' if ENV.key?('DYNO')
 
-gem 'chirp', github: 'travis-infrastructure/chirp'
+gem 'chirp', git: 'https://github.com/travis-ci/chirp.git'
