@@ -19,6 +19,7 @@ matrix:
     <<: *linux_shared
   - sudo: required
     dist: xenial
+    group: edge
     env: QUEUE=gce DIST=xenial
     <<: *linux_shared
 before_install:
