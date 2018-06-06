@@ -2,8 +2,6 @@ language: ruby
 sudo: false
 rvm: 2.5.1
 env:
-  matrix:
-  - QUEUE=ec2 DIST=trusty
   global:
   - CHIRP_SUMMARY_OUTPUT="${TRAVIS_BUILD_DIR}/chirp.json"
   - SITE=org
@@ -13,6 +11,10 @@ linux_shared: &linux_shared
   addons: { apt: { packages: [bc] } }
 matrix:
   include:
+  - sudo: false
+    dist: trusty
+    env: QUEUE=ec2 DIST=trusty
+    <<: *linux_shared
   - sudo: required
     dist: trusty
     env: QUEUE=gce DIST=trusty
