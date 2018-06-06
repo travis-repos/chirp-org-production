@@ -2,22 +2,28 @@ language: ruby
 sudo: false
 rvm: 2.5.1
 env:
+  matrix:
+  - QUEUE=ec2 DIST=trusty
   global:
   - CHIRP_SUMMARY_OUTPUT="${TRAVIS_BUILD_DIR}/chirp.json"
   - SITE=org
-  matrix:
-  - N=00 QUEUE=ec2 DIST=trusty
-  - N=01 QUEUE=ec2 DIST=trusty
-  - N=02 QUEUE=ec2 DIST=trusty
-  - N=03 QUEUE=ec2 DIST=trusty
-  - N=04 QUEUE=ec2 DIST=trusty
-  - N=05 QUEUE=ec2 DIST=trusty
-  - N=06 QUEUE=ec2 DIST=trusty
-  - N=07 QUEUE=ec2 DIST=trusty
-  - N=08 QUEUE=ec2 DIST=trusty
-  - N=09 QUEUE=ec2 DIST=trusty
 addons: { apt: { packages: [bc] } }
-before_install: gem install bundler
+linux_shared: &linux_shared
+  os: linux
+  addons: { apt: { packages: [bc] } }
+matrix:
+  include:
+  - sudo: required
+    dist: trusty
+    env: QUEUE=gce DIST=trusty
+    <<: *linux_shared
+  - sudo: required
+    dist: xenial
+    env: QUEUE=gce DIST=xenial
+    <<: *linux_shared
+before_install:
+- gem update --system
+- gem install bundler
 script: bundle exec chirp scripts
 after_script: bundle exec chirp sendstats 2>/dev/null
 after_failure: bundle exec chirp dumplogs
