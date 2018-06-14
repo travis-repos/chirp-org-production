@@ -24,6 +24,9 @@ matrix:
     group: edge
     env: QUEUE=gce DIST=xenial
     <<: *linux_shared
+  - os: osx
+    osx_image: xcode8.3
+    env: QUEUE=macos DIST=xcode8.3
 before_install:
 - gem update --system
 - gem install bundler
