@@ -1,12 +1,36 @@
 GIT
   remote: https://github.com/travis-ci/chirp.git
-  revision: f346bc160056ca33af1d62db271d613e39e2f14f
+  revision: 41afc459330eee58ba0d20fab072055eee134004
   specs:
     chirp (0.1.0)
+      aws-sdk-s3 (~> 1)
+      faraday (~> 0.15)
+      faraday_middleware (~> 0.12)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    aws-eventstream (1.0.0)
+    aws-partitions (1.91.0)
+    aws-sdk-core (3.21.2)
+      aws-eventstream (~> 1.0)
+      aws-partitions (~> 1.0)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.5.0)
+      aws-sdk-core (~> 3)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.14.0)
+      aws-sdk-core (~> 3, >= 3.21.2)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.0)
+    aws-sigv4 (1.0.2)
+    faraday (0.15.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
+    jmespath (1.4.0)
+    multipart-post (2.0.0)
 
 PLATFORMS
   ruby
