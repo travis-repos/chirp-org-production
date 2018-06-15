@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/travis-ci/chirp.git
-  revision: 41afc459330eee58ba0d20fab072055eee134004
+  revision: 0b2eacad5cd51db5788eac293e931ed48f181b3b
   specs:
     chirp (0.1.0)
       aws-sdk-s3 (~> 1)
