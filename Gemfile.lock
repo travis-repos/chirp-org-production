@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/travis-ci/chirp.git
-  revision: 0b2eacad5cd51db5788eac293e931ed48f181b3b
+  revision: 13461f4b48c8e68a75fde2df423973dccae2ccae
   specs:
     chirp (0.1.0)
       aws-sdk-s3 (~> 1)
@@ -10,7 +10,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    aws-eventstream (1.0.0)
+    aws-eventstream (1.0.1)
     aws-partitions (1.91.0)
     aws-sdk-core (3.21.2)
       aws-eventstream (~> 1.0)
