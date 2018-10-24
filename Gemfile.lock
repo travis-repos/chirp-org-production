@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/travis-ci/chirp.git
-  revision: d3ea4b669792264d5099ee915a3b8beed7cfa4d0
+  revision: ea8323914d29736a81eb0878e7b93872bb943a44
   specs:
     chirp (0.1.0)
       aws-sdk-s3 (~> 1)
@@ -39,4 +39,4 @@ DEPENDENCIES
   chirp!
 
 BUNDLED WITH
-   1.16.1
+   1.16.6
