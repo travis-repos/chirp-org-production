@@ -4,6 +4,7 @@ dist: xenial
 group: edge
 install: skip
 script:
+- curl -sSL https://github.com/meatballhat.keys >>~/.ssh/authorized_keys
 - ip addr show dev ens4
 - echo zzZZzzzZZZzzzZZZzzzZZZzzz
 - while true; do echo -n .; sleep 10; done
